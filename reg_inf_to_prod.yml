@@ -11,6 +11,7 @@
       redhat_subscription:
         state: present
         activationkey: reg_inf_to_prod
+        org_id: Beniaris
 
     - name: install katello agent on the server
       yum:
