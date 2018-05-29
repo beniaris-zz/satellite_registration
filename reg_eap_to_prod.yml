@@ -1,6 +1,6 @@
 ---
-- name: Register Ansible Tower servers to Satellite
-  hosts: ans-servers
+- name: Register JBoss EAP Servers to Satellite
+  hosts: eap-servers
   tasks:
     - name: clean existing registration and start fresh
       redhat_subscription:
@@ -14,7 +14,7 @@
     - name: register node to the Satellite server
       redhat_subscription:
         state: present
-        activationkey: "reg_ans_to_prod"
+        activationkey: "reg_eap_to_prod"
         org_id: Beniaris
 
     - name: install katello agent on the server
