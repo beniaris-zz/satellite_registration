@@ -21,3 +21,8 @@
       yum:
         name: katello-agent
         state: latest
+
+    - name: update server to latest patch level
+      command: yum -y update
+      args: 
+        warn: no
