@@ -14,7 +14,7 @@
     - name: register node to the Satellite server
       redhat_subscription:
         state: present
-        activationkey: "ak_inf_to_prod"
+        activationkey: "ak_infservers_to_prod"
         org_id: Beniaris
 
     - name: install katello agent on the server
