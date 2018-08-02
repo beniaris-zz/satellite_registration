@@ -29,7 +29,7 @@
                 
     - name: restarted httpd service
       service:
-        name: httpd
+        name: sshd
         enabled: yes
         state: started
         
