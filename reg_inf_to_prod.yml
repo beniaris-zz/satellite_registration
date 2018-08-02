@@ -1,6 +1,6 @@
 ---
 - name: Register infrastructure server to Satellite
-  hosts: infservers
+  hosts: all
   tasks:
     - name: clean existing registration and start fresh
       redhat_subscription:
