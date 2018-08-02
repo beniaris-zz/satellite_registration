@@ -26,10 +26,3 @@
       command: yum -y update
       args: 
         warn: no
-                
-    - name: restarted httpd service
-      service:
-        name: sshd
-        enabled: yes
-        state: started
-        
