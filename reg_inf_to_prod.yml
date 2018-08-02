@@ -26,20 +26,8 @@
       command: yum -y update
       args: 
         warn: no
-        
-    - name: add httpd server
-      yum:
-        name: httpd
-        state: latest
-        
-    - name: open firewall for httpd
-      firewall:
-        service: http
-        state: enabled
-        permanent: true
-        immediate: yes
-        
-    - name: enable httpd service
+                
+    - name: restarted httpd service
       service:
         name: httpd
         enabled: yes
