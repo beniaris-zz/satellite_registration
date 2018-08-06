@@ -12,7 +12,7 @@
         warn: no
 
 - name: register infrastructure hosts to Satellite
-  host: infservers
+  hosts: infservers
   tasks:
     - name: register infrastructure hosts with activation key
       redhat_subscription:
@@ -31,7 +31,7 @@
         warn: no
 
 - name: register JBoss EAP hosts to Satellite
-  host: eapservers
+  hosts: eapservers
   tasks:
     - name: register infrastructure hosts with activation key
       redhat_subscription:
