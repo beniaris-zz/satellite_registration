@@ -1,6 +1,6 @@
 ---
 - name: prepare hosts for Satellite registration
-  hosts: infservers eapservers
+  hosts: infservers
   tasks:
     - name: unregister subscription and start fresh
       redhat_subscription:
@@ -30,21 +30,3 @@
       args: 
         warn: no
 
-- name: register JBoss EAP hosts to Satellite
-  hosts: eapservers
-  tasks:
-    - name: register infrastructure hosts with activation key
-      redhat_subscription:
-        state: present
-        activationkey: "ak_eapservers_to_prod"
-        org_id: Beniaris
-
-    - name: install katello agent on the server
-      yum:
-        name: katello-agent
-        state: latest
-
-    - name: update server to latest patch level
-      command: yum -y update
-      args: 
-        warn: no
