@@ -1,6 +1,6 @@
 ---
 - name: prepare hosts for Satellite registration
-  hosts: "{{ idm_hosts }}"
+  hosts: infservers
   tasks:
     - name: unregister subscription and start fresh
       redhat_subscription:
@@ -17,7 +17,7 @@
     - name: register infrastructure hosts with activation key
       redhat_subscription:
         state: present
-        activationkey: "{{ activation_key }}"
+        activationkey: ak_infservers_to_prod
         org_id: Beniaris
 
     - name: install katello agent on the server
